@@ -10,6 +10,8 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { SidebarModule } from './shared/sidebar/sidebar.module';
 import { UserComponent } from './user/user.component';
+import { DashboardService } from './dashboard/dashboard.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -22,9 +24,10 @@ import { UserComponent } from './user/user.component';
     BrowserModule,
     NavbarModule,
     SidebarModule,
+    HttpModule,
     RouterModule.forRoot(AppRoutes),
   ],
-  providers: [],
+  providers: [DashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
