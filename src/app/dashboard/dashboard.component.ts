@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from './dashboard.service';
+import { ViewChild } from '@angular/core';
+import { ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver } from '@angular/core';
+import { ApplicationRef } from '@angular/core';
+import { RowcomponentComponent } from '../rowcomponent/rowcomponent.component';
 
 declare interface TableData {
   headerRow: string[];
-  dataRows: string[][];
 }
 
 
@@ -17,7 +21,11 @@ export class DashboardComponent implements OnInit {
   public tableData2: TableData;
   private responseData;
 
-  constructor(private dashboardService:DashboardService) { }
+  constructor(
+    private dashboardService:DashboardService,
+    private _compoentFactoryResolver: ComponentFactoryResolver,
+    private applicationRef: ApplicationRef
+  ) { }
 
   ngOnInit() {
 
@@ -31,14 +39,20 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  @ViewChild('row',{read:ViewContainerRef}) row:ViewContainerRef;
+
   constructTable(tenantData:Array<Object>){
     console.log(tenantData);
+    this.addRowToTable(tenantData);
     this.tableData2 = {
-      headerRow: ['Unique Tenant ID','Name','External ID','External Name','Tenant Type'],
-      dataRows: [
-        [ tenantData['TenantId'],tenantData['TenantName'] ,tenantData['ExternalTenantID'],tenantData['ExternalTenantName'],tenantData['tenantType']]
-      ]
+      headerRow: ['Unique Tenant ID','Name','External ID','External Name','Tenant Type']
     };
+  }
+
+  addRowToTable(rowData){
+    let comp = this._compoentFactoryResolver.resolveComponentFactory(RowcomponentComponent);
+    let expComponent = this.row.createComponent(comp);
+    expComponent.instance._refData = rowData;
   }
 
 }

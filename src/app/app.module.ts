@@ -12,6 +12,8 @@ import { SidebarModule } from './shared/sidebar/sidebar.module';
 import { UserComponent } from './user/user.component';
 import { DashboardService } from './dashboard/dashboard.service';
 import { HttpModule } from '@angular/http';
+import { RowcomponentComponent } from './rowcomponent/rowcomponent.component';
+import { MapToIterablePipe } from './rowcomponent/rowcomponent.pipe';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { HttpModule } from '@angular/http';
     AppComponent,
     DashboardComponent,
     UserComponent,
+    RowcomponentComponent,
+    MapToIterablePipe
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,7 @@ import { HttpModule } from '@angular/http';
     RouterModule.forRoot(AppRoutes),
   ],
   providers: [DashboardService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [RowcomponentComponent],
 })
 export class AppModule { }
