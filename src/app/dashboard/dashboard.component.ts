@@ -5,20 +5,17 @@ import { ViewContainerRef } from '@angular/core';
 import { ComponentFactoryResolver } from '@angular/core';
 import { ApplicationRef } from '@angular/core';
 import { RowcomponentComponent } from '../rowcomponent/rowcomponent.component';
+import { ViewEncapsulation } from '@angular/core';
 
-declare interface TableData {
-  headerRow: string[];
-}
 
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  encapsulation : ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit {
-  public tableData1: TableData;
-  public tableData2: TableData;
+  
   private responseData;
 
   constructor(
@@ -32,7 +29,7 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getTenantDetails().subscribe((response =>{
       console.log(response);
       if(response && response.result){
-        this.responseData = response.data[0];
+        this.responseData = response.data;
         this.constructTable(this.responseData);
       }
     }));
@@ -44,9 +41,7 @@ export class DashboardComponent implements OnInit {
   constructTable(tenantData:Array<Object>){
     console.log(tenantData);
     this.addRowToTable(tenantData);
-    this.tableData2 = {
-      headerRow: ['Unique Tenant ID','Name','External ID','External Name','Tenant Type']
-    };
+    
   }
 
   addRowToTable(rowData){

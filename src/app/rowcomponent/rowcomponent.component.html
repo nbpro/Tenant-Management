@@ -1,11 +1,19 @@
 
-<!-- <tr *ngFor="let keyValuePair of rowData | mapToIterablePipe">
-    <td>{{keyValuePair?.val}}</td>
-</tr> -->
-<tr>
-  <td>{{rowData?.TenantId}}</td>
-  <td>{{rowData?.TenantName}}</td>
-  <td>{{rowData?.ExternalID}}</td>
-  <td>{{rowData?.ExternalName}}</td>
-  <td>{{rowData?.TenantType}}</td>
-</tr>
+    <div class="content table-responsive table-full-width">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th *ngFor="let cell of tableData?.headerRow">{{ cell }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cell of rowData">
+                    <td>{{ cell?.TenantId }}</td>
+                    <td>{{ cell?.TenantName }}</td>
+                    <td>{{ cell?.ExternalTenantID }}</td>
+                    <td>{{ cell?.ExternalTenantName }}</td>
+                    <td>{{ cell?.tenantType }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
