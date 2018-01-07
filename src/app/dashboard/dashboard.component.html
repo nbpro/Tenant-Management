@@ -4,25 +4,11 @@
       <div class="card">
         <!-- card header starts here -->
           <div class="header">
-              <h4 class="title">Tenant Details</h4>
+              <h4 class="title tenant-header">Tenant Details</h4>
+              <input type="text"  class="tenant-search" placeholder="Search"/>
           </div>
+          <!-- Table component will come here -->
           <ng-container #row></ng-container>
-        <!-- card header ends here -->
-        <!-- table starts here  -->
-        <!-- <div class="content table-responsive table-full-width">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th *ngFor="let cell of tableData2?.headerRow">{{ cell }}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                      <ng-container #row></ng-container>
-                  append child row here 
-                </tbody>
-            </table>
-        </div> -->
-        <!-- table ends here -->
       </div>
     </div>
   </div>

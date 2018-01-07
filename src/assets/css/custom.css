@@ -3972,3 +3972,9 @@ Copyright (c) 2015 Daniel Eden
     display: none;
   }
 }
+.title .tenant-header{
+  float:left;
+}
+.tenant-search{
+  float: right;
+}

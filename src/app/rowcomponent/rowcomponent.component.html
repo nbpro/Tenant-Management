@@ -7,12 +7,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let cell of rowData">
+                <tr *ngFor="let cell of rowData;let i=index">
+                    <td>{{ i + 1 }}</td>
                     <td>{{ cell?.TenantId }}</td>
                     <td>{{ cell?.TenantName }}</td>
-                    <td>{{ cell?.ExternalTenantID }}</td>
-                    <td>{{ cell?.ExternalTenantName }}</td>
                     <td>{{ cell?.tenantType }}</td>
+                    <td>
+                      <a><span class="ti-user"></span></a>
+                      <a><span class="ti-pencil-alt"></span></a>
+                      <a><span class="ti-close"></span></a>
+                    </td>
                 </tr>
             </tbody>
         </table>

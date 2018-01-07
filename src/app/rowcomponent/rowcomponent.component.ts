@@ -19,10 +19,12 @@ export class RowcomponentComponent  implements OnInit {
   }
 
   @Input() rowData;
+  @Input() searchText;
 
   ngOnInit() {
     this.tableData = {
-      headerRow: ['Unique Tenant ID','Name','External ID','External Name','Tenant Type']
+      // headerRow: ['Unique Tenant ID','Name','External ID','Tenant Type']
+      headerRow: ['#','Unique Tenant ID','Name','Tenant Type','Actions']
     };
     this.rowData = this._refData;
   }

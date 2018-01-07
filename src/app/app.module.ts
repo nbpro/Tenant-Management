@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { MapToIterablePipe } from './rowcomponent/rowcomponent.pipe';
     NavbarModule,
     SidebarModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(AppRoutes),
   ],
   providers: [DashboardService],
