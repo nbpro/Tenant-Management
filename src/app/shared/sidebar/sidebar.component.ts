@@ -9,7 +9,7 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
     { path: 'dashboard', title: 'Dashboard',  icon: 'ti-panel', class: '' },
-    { path: 'user', title: 'User Profile',  icon:'ti-user', class: '' }
+    { path: 'user', title: 'User Profile',  icon:'ti-user', class: '' },
 ];
 
 @Component({

@@ -39,9 +39,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild('row',{read:ViewContainerRef}) row:ViewContainerRef;
 
   constructTable(tenantData:Array<Object>){
-    console.log(tenantData);
     this.addRowToTable(tenantData);
-    
   }
 
   addRowToTable(rowData){

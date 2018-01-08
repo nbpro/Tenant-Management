@@ -13,9 +13,9 @@
                     <td>{{ cell?.TenantName }}</td>
                     <td>{{ cell?.tenantType }}</td>
                     <td>
-                      <a><span class="ti-user"></span></a>
-                      <a><span class="ti-pencil-alt"></span></a>
-                      <a><span class="ti-close"></span></a>
+                      <a (click)="goToTenantDetails(cell)"><span class="ti-user clickable"></span></a>
+                      <span class="ti-pencil-alt clickable"></span>
+                      <span class="ti-close clickable"></span>
                     </td>
                 </tr>
             </tbody>

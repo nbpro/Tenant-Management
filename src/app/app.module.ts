@@ -15,6 +15,7 @@ import { DashboardService } from './dashboard/dashboard.service';
 import { HttpModule } from '@angular/http';
 import { RowcomponentComponent } from './rowcomponent/rowcomponent.component';
 import { MapToIterablePipe } from './rowcomponent/rowcomponent.pipe';
+import { TenantComponent } from './tenant/tenant.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MapToIterablePipe } from './rowcomponent/rowcomponent.pipe';
     DashboardComponent,
     UserComponent,
     RowcomponentComponent,
-    MapToIterablePipe
+    MapToIterablePipe,
+    TenantComponent
   ],
   imports: [
     BrowserModule,
