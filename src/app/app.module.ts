@@ -16,6 +16,7 @@ import { HttpModule } from '@angular/http';
 import { RowcomponentComponent } from './rowcomponent/rowcomponent.component';
 import { MapToIterablePipe } from './rowcomponent/rowcomponent.pipe';
 import { TenantComponent } from './tenant/tenant.component';
+import { TenantService } from './tenant/tenant.service';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { TenantComponent } from './tenant/tenant.component';
     FormsModule,
     RouterModule.forRoot(AppRoutes),
   ],
-  providers: [DashboardService],
+  providers: [DashboardService,TenantService],
   bootstrap: [AppComponent],
   entryComponents: [RowcomponentComponent],
 })

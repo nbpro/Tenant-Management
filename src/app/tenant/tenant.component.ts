@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TenantService } from './tenant.service';
 
 @Component({
   selector: 'app-tenant',
@@ -9,14 +10,21 @@ import { ActivatedRoute } from '@angular/router';
 export class TenantComponent implements OnInit {
   private routeSubscriber;
   private tenantId;
-  constructor(private route: ActivatedRoute) { }
+  private tenantDetails;
+  constructor(
+    private route: ActivatedRoute,
+    private tenantService:TenantService) { }
 
   ngOnInit() {
     this.routeSubscriber = this.route.params.subscribe(params => {
       this.tenantId = params['tenantId'];
     });
-    console.log(this.routeSubscriber);
-    console.log(this.tenantId);
+  }
+
+  setUpView(){
+    const TenantData = this.tenantService.getTenantDetailsByTenantId(this.tenantId).subscribe((response =>{
+        this.tenantDetails = response;
+    }));
     debugger;
   }
 }
