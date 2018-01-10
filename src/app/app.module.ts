@@ -17,6 +17,7 @@ import { RowcomponentComponent } from './rowcomponent/rowcomponent.component';
 import { MapToIterablePipe } from './rowcomponent/rowcomponent.pipe';
 import { TenantComponent } from './tenant/tenant.component';
 import { TenantService } from './tenant/tenant.service';
+import { AccordionComponent, AccordionGroup } from './shared/accordion/accordion.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { TenantService } from './tenant/tenant.service';
     UserComponent,
     RowcomponentComponent,
     MapToIterablePipe,
-    TenantComponent
+    TenantComponent,
+    AccordionGroup
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import { TenantService } from './tenant/tenant.service';
     FormsModule,
     RouterModule.forRoot(AppRoutes),
   ],
-  providers: [DashboardService,TenantService],
+  providers: [DashboardService,TenantService, AccordionComponent],
   bootstrap: [AppComponent],
   entryComponents: [RowcomponentComponent],
 })
